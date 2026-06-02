@@ -283,7 +283,7 @@
       <div class="sec-head">
         <div class="eyebrow">How AI meets custody</div>
         <h2>Fireblocks developer tooling: SDK, CLI &amp; MCP</h2>
-        <p>Fireblocks exposes three layers to builders. This suite leans on all three: the official SDK as the backbone, CLI-style scripts to run the sandbox, and a custom MCP server that lets AI agents operate on custody safely.</p>
+        <p>Fireblocks ships an official SDK, an agent-first CLI, and MCP tooling for AI agents. This suite uses the official SDK as its backbone, and adds its own CLI-style scripts and a read-only MCP server, built in the same spirit as the official CLI and AI Link, which Fireblocks has since shipped.</p>
       </div>
 
       <div class="stack">
@@ -292,14 +292,14 @@
           <p class="tool-desc">
             The primary developer interface for building on Fireblocks. Create vault accounts and
             wallets, transfer assets, approve transactions, and manage policy. Requests authenticate
-            with an API key plus an RSA private key.
+            with an API key plus an RSA private key. Fireblocks officially maintains TypeScript and
+            Python SDKs, with a Java guide and Web3 connectors.
           </p>
           <div class="chips">
             <span class="chip">TypeScript</span>
             <span class="chip">Python</span>
-            <span class="chip">Java</span>
-            <span class="chip">Go</span>
-            <span class="chip">C#</span>
+            <span class="chip">Java (guide)</span>
+            <span class="chip">Web3 connectors</span>
           </div>
           <span class="tool-here"><b>In this suite:</b> @fireblocks/ts-sdk (v7, v12, v19) across four of the five apps. <a href="https://developers.fireblocks.com/reference/api-overview" target="_blank" rel="noreferrer">API docs &rarr;</a></span>
         </div>
@@ -307,33 +307,34 @@
         <div class="stack-card">
           <h4><span class="ic"></span> CLI</h4>
           <p class="tool-desc">
-            Command-line tooling to interact with the platform without a full application: test API
-            calls, generate signatures, validate connectivity, and run automation. Many teams build
-            their own CLI wrappers around the SDK.
+            Fireblocks ships an official agent-first CLI, @fireblocks/fireblocks-cli (Node 18+), that
+            exposes every API operation as a typed, JWT-signed command. It includes a help-index sized
+            for LLM context and a --dry-run flag to preview any request before it executes.
           </p>
           <div class="chips">
-            <span class="chip">auth checks</span>
-            <span class="chip">signatures</span>
-            <span class="chip">connectivity</span>
+            <span class="chip">@fireblocks/fireblocks-cli</span>
+            <span class="chip">help-index</span>
+            <span class="chip">--dry-run</span>
             <span class="chip">automation</span>
           </div>
-          <span class="tool-here"><b>In this suite:</b> custom Node scripts that verify auth and seed the sandbox with vaults and test assets. <a href="https://developers.fireblocks.com/docs/fireblocks-cli" target="_blank" rel="noreferrer">CLI docs &rarr;</a></span>
+          <span class="tool-here"><b>In this suite:</b> custom Node scripts that verify auth and seed the sandbox with vaults and test assets, written before the official CLI shipped and in the same spirit. <a href="https://developers.fireblocks.com/docs/fireblocks-cli" target="_blank" rel="noreferrer">CLI docs &rarr;</a></span>
         </div>
 
         <div class="stack-card">
           <h4><span class="ic"></span> MCP</h4>
           <p class="tool-desc">
-            Model Context Protocol lets AI assistants like Cursor, Claude, and ChatGPT securely
-            operate on Fireblocks resources. The assistant talks to an MCP server, and the MCP server
-            uses the Fireblocks SDK underneath.
+            Model Context Protocol lets AI assistants like Cursor, Claude, and ChatGPT operate on
+            Fireblocks. Fireblocks offers a Documentation MCP to ground agents in the docs, and AI Link,
+            an MCP server connecting agents to live workspace data (a hosted read-only Remote mode and
+            an open-source read + write Local mode).
           </p>
           <div class="chips">
-            <span class="chip">Cursor</span>
-            <span class="chip">Claude</span>
-            <span class="chip">ChatGPT</span>
+            <span class="chip">Documentation MCP</span>
+            <span class="chip">AI Link</span>
+            <span class="chip">read-only</span>
             <span class="chip">agents</span>
           </div>
-          <span class="tool-here"><b>In this suite:</b> a custom JSON-RPC MCP server exposing read-only Fireblocks tools (list vaults, get transactions) to agents. <a href="https://developers.fireblocks.com/docs/building-with-ai" target="_blank" rel="noreferrer">Building with AI &rarr;</a></span>
+          <span class="tool-here"><b>In this suite:</b> a custom JSON-RPC MCP server exposing read-only Fireblocks tools (list vaults, get transactions) to agents, the same read-only posture as AI Link's Remote MCP. <a href="https://developers.fireblocks.com/docs/building-with-ai" target="_blank" rel="noreferrer">Building with AI &rarr;</a></span>
         </div>
       </div>
 
