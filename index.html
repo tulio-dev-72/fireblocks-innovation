@@ -319,7 +319,7 @@
             <span class="chip">--dry-run</span>
             <span class="chip">automation</span>
           </div>
-          <span class="tool-here"><b>In this suite:</b> custom Node scripts that verify auth and seed the sandbox with vaults and test assets, written before the official CLI shipped and in the same spirit. <a href="https://developers.fireblocks.com/docs/fireblocks-cli" target="_blank" rel="noreferrer">CLI docs &rarr;</a></span>
+          <span class="tool-here"><b>In this suite:</b> the official @fireblocks/fireblocks-cli is wired into the command center (pnpm fireblocks whoami / vaults / help-index) through a thin env wrapper, so auth checks and reads run against the sandbox. A bespoke seed script remains for sandbox activity that also writes audit rows to Postgres. <a href="https://developers.fireblocks.com/docs/fireblocks-cli" target="_blank" rel="noreferrer">CLI docs &rarr;</a></span>
         </div>
 
         <div class="stack-card">
