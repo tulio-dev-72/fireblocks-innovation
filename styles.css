@@ -198,6 +198,8 @@ a { color: inherit; text-decoration: none; }
   border-top: 1px solid var(--line-soft); padding-top: 11px; margin-top: 4px; line-height: 1.55;
 }
 .tool-here b { color: var(--ink-2); font-weight: 500; }
+.tool-here a, .stack-item .v a { color: var(--orange); text-decoration: none; white-space: nowrap; }
+.tool-here a:hover, .stack-item .v a:hover { text-decoration: underline; }
 .stack-card .chips { margin-top: 2px; }
 
 .tool-flow {
@@ -221,6 +223,23 @@ a { color: inherit; text-decoration: none; }
 }
 .creds .lbl { color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-size: 10px; }
 .creds code { color: var(--orange); font-weight: 600; }
+
+.refs { margin-top: 30px; }
+.refs .refs-label {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--faint); margin-bottom: 12px;
+}
+.refs ul { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 9px; }
+@media (max-width: 880px) { .refs ul { grid-template-columns: 1fr; } }
+.refs a {
+  display: flex; align-items: center; gap: 10px; padding: 11px 14px;
+  border: 1px solid var(--line); background: var(--panel); border-radius: 11px;
+  font-size: 13px; color: var(--ink-2); transition: border-color 0.2s, color 0.2s;
+}
+.refs a:hover { border-color: var(--orange-line); color: var(--ink); }
+.refs a .rk { font-weight: 600; color: var(--ink); }
+.refs a .ru { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-left: auto; }
+.refs a:hover .ru { color: var(--orange); }
 
 /* ---------- footer ---------- */
 .note {
