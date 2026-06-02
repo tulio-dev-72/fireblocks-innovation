@@ -147,6 +147,7 @@ section[id] { scroll-margin-top: 74px; }
   color: var(--accent-hover); margin-bottom: 10px;
 }
 .why-body { color: var(--ink-2); font-size: 15.5px; line-height: 1.66; max-width: 84ch; }
+.why-body + .why-body { margin-top: 12px; }
 
 /* ---------- section heading ---------- */
 .sec-head { margin: 76px 0 30px; }
