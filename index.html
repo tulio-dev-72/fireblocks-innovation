@@ -96,7 +96,7 @@
                 <span class="chip prim">Transaction lifecycle</span>
                 <span class="chip prim">TAP (read-only snapshot)</span>
                 <span class="chip prim">MPC custody</span>
-                <span class="chip prim">Webhooks</span>
+                <span class="chip prim">Webhooks v2 (JWKS)</span>
               </div>
             </div>
             <p class="tech-line"><b>Stack:</b> Next.js 16 · React 19 · Supabase (Auth + Postgres) · Zustand · Tailwind · AI SDK</p>
@@ -120,8 +120,9 @@
             <p class="overview">
               Browse every vault account and multi-asset balance, route governed transfers
               vault to vault or vault to external address, and watch the transaction lifecycle
-              auto-poll through policy holds to completion. The app only submits; Fireblocks governs.
-              API credentials live server-side only, behind a lightweight access gate.
+              move through policy holds to completion. A Webhooks v2 receiver validates and
+              surfaces verified delivery events alongside polling. The app only submits;
+              Fireblocks governs. API credentials live server-side only, behind a lightweight access gate.
             </p>
             <div class="chips-group">
               <div class="chips-label">Fireblocks API</div>
@@ -129,6 +130,7 @@
                 <span class="chip api">@fireblocks/ts-sdk v20</span>
                 <span class="chip api">vaultAccounts + assets</span>
                 <span class="chip api">createTransaction</span>
+                <span class="chip api">Webhooks v2 receiver</span>
                 <span class="chip api">transaction polling</span>
               </div>
             </div>
@@ -367,7 +369,7 @@
             <div class="stack-item"><span class="k">Vaults &amp; Transactions APIs</span><span class="v">Vault accounts, multi-asset balances, createTransaction, status, supported assets.</span></div>
             <div class="stack-item"><span class="k">Transaction Authorization Policy</span><span class="v">TAP, the rule engine that governs funds leaving custody at the MPC layer.</span></div>
             <div class="stack-item"><span class="k">MPC-CMP custody</span><span class="v">Keys sharded across parties; no single private key ever exists.</span></div>
-            <div class="stack-item"><span class="k">Webhooks</span><span class="v">Transaction lifecycle events drive audit and UI state. <a href="https://developers.fireblocks.com/reference/api-overview#webhooks" target="_blank" rel="noreferrer">Docs &rarr;</a></span></div>
+            <div class="stack-item"><span class="k">Webhooks v2</span><span class="v">Transaction lifecycle events drive audit and UI state. Receivers validate the Fireblocks-Webhook-Signature (detached JWS) against the environment JWKS, with the legacy RSA-SHA512 signature as a fallback. <a href="https://developers.fireblocks.com/reference/validating-webhooks" target="_blank" rel="noreferrer">Docs &rarr;</a></span></div>
           </div>
         </div>
 
@@ -455,7 +457,7 @@
         <div class="refs-label">Fireblocks documentation</div>
         <ul>
           <li><a href="https://developers.fireblocks.com/reference/api-overview" target="_blank" rel="noreferrer"><span class="rk">API overview</span><span class="ru">reference/api-overview</span></a></li>
-          <li><a href="https://developers.fireblocks.com/reference/api-overview#webhooks" target="_blank" rel="noreferrer"><span class="rk">Webhooks</span><span class="ru">api-overview#webhooks</span></a></li>
+          <li><a href="https://developers.fireblocks.com/reference/validating-webhooks" target="_blank" rel="noreferrer"><span class="rk">Webhooks v2 (validation)</span><span class="ru">reference/validating-webhooks</span></a></li>
           <li><a href="https://developers.fireblocks.com/docs/fireblocks-cli" target="_blank" rel="noreferrer"><span class="rk">Fireblocks CLI</span><span class="ru">docs/fireblocks-cli</span></a></li>
           <li><a href="https://developers.fireblocks.com/docs/building-with-ai" target="_blank" rel="noreferrer"><span class="rk">Building with AI</span><span class="ru">docs/building-with-ai</span></a></li>
         </ul>
