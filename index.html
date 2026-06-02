@@ -22,7 +22,7 @@
         <span>Fireblocks Innovation</span>
       </a>
       <nav class="nav-links">
-        <a href="#about">About</a>
+        <button type="button" class="nav-about" data-about-open>About me</button>
         <a href="#apps">Applications</a>
         <a href="#tooling">Developer tooling</a>
         <a href="#primitives">Primitives</a>
@@ -46,26 +46,6 @@
         <span><b>1</b> Fireblocks sandbox</span>
         <span><b>@fireblocks/ts-sdk</b> + Dynamic</span>
         <span><b>MPC custody</b> · TAP · MCP</span>
-      </div>
-    </section>
-
-    <!-- WHY -->
-    <section id="about">
-      <div class="why">
-        <div class="why-label">Why I built this</div>
-        <p class="why-body">
-          I've spent my career in enterprise software, helping large financial institutions adopt new
-          platforms at scale, including supporting JPMorgan Chase during my time at Snowflake. That
-          work centers on what institutions cannot compromise on: security, governance, compliance,
-          and operational control.
-        </p>
-        <p class="why-body">
-          This suite is how I build conviction about a platform: I evaluated Fireblocks the way an
-          institution would, standing up five applications against a live sandbox to pressure-test the
-          custody primitives, segregation of duties, and policy controls firsthand. Each one maps to a
-          real institutional use case, from settlement governance to a consumer wallet. This page is
-          the walkthrough.
-        </p>
       </div>
     </section>
 
@@ -493,5 +473,39 @@
       Built on <span class="orange">Fireblocks</span> infrastructure · Sandbox &amp; testnets · Five live apps, one custody backbone
     </footer>
   </main>
+
+  <!-- ABOUT ME MODAL -->
+  <div class="modal-overlay" id="aboutModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
+      <button type="button" class="modal-close" data-about-close aria-label="Close">&times;</button>
+      <div class="modal-label" id="aboutTitle">About me</div>
+      <p class="modal-body">
+        I've spent my career in enterprise software, helping large financial institutions adopt new
+        platforms at scale, including supporting JPMorgan Chase during my time at Snowflake. That work
+        centers on what institutions cannot compromise on: security, governance, compliance, and
+        operational control.
+      </p>
+      <p class="modal-body">
+        This suite is how I build conviction about a platform: I evaluated Fireblocks the way an
+        institution would, standing up five applications against a live sandbox to pressure-test the
+        custody primitives, segregation of duties, and policy controls firsthand. Each one maps to a
+        real institutional use case, from settlement governance to a consumer wallet. This page is the
+        walkthrough.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var overlay = document.getElementById("aboutModal");
+      if (!overlay) return;
+      function open() { overlay.hidden = false; document.body.style.overflow = "hidden"; }
+      function close() { overlay.hidden = true; document.body.style.overflow = ""; }
+      document.querySelectorAll("[data-about-open]").forEach(function (b) { b.addEventListener("click", open); });
+      document.querySelectorAll("[data-about-close]").forEach(function (b) { b.addEventListener("click", close); });
+      overlay.addEventListener("click", function (e) { if (e.target === overlay) close(); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !overlay.hidden) close(); });
+    })();
+  </script>
 </body>
 </html>
