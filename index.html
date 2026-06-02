@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fireblocks Innovation — Five custody applications</title>
-  <meta name="description" content="A showcase of five working applications built on Fireblocks infrastructure: institutional settlement governance, a custody operations console, a trusted AI command center, a consumer embedded wallet, and a role-based custody wallet." />
+  <title>Fireblocks Innovation · Five custody applications</title>
+  <meta name="description" content="A showcase of five live applications built on Fireblocks infrastructure: institutional settlement governance, a custody operations console, a trusted AI command center, a consumer embedded wallet, and a role-based custody wallet." />
   <meta name="theme-color" content="#0e0c0a" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="apple-touch-icon" href="favicon.svg" />
@@ -18,14 +18,14 @@
     <!-- HERO -->
     <section class="hero">
       <span class="kicker"><span class="dot"></span> Fireblocks Innovation</span>
-      <h1>Five working apps, one <em>custody</em> backbone.</h1>
+      <h1>Five live apps, one <em>custody</em> backbone.</h1>
       <p>
-        Each application below is live and wired to a real Fireblocks sandbox workspace — from
+        Each application below is live and wired to a real Fireblocks sandbox workspace, from
         institutional settlement governance to a consumer embedded wallet. Custody, signing, and
         policy stay with Fireblocks; the apps only orchestrate. Open any tile to try it.
       </p>
       <div class="meta">
-        <span><b>5</b> applications</span>
+        <span><b>5</b> live applications</span>
         <span><b>1</b> Fireblocks sandbox</span>
         <span><b>@fireblocks/ts-sdk</b> + Dynamic</span>
         <span><b>MPC custody</b> · TAP · MCP</span>
@@ -47,7 +47,7 @@
           <a class="tile-shot" href="https://institutional-workflow-blueprints.vercel.app/" target="_blank" rel="noreferrer">
             <span class="num">01</span>
             <span class="badge"><span class="bdot"></span> Live</span>
-            <img src="shots/blueprints.png" alt="Institutional Workflow Blueprints — Treasury Control Center home screen" />
+            <img src="shots/blueprints.png" alt="Institutional Workflow Blueprints, Treasury Control Center home screen" />
           </a>
           <div class="tile-body">
             <div class="tile-title">
@@ -56,11 +56,11 @@
             </div>
             <p class="tagline">Institutional settlement governance with real segregation of duties.</p>
             <p class="overview">
-              Six governed settlement workflows — stablecoin payout, exchange withdrawal, treasury
+              Six governed settlement workflows: stablecoin payout, exchange withdrawal, treasury
               rebalancing, gas readiness, multi-chain coordination, and webhook lifecycle. Enter any
-              scenario by role: analysts initiate, managers authorize, admins own policy. Settlements
-              run against a live Fireblocks treasury vault with a policy-evaluation gate and a full
-              audit trail.
+              scenario by role, where analysts initiate, managers authorize, and admins own policy.
+              Settlements run against a live Fireblocks treasury vault with a policy-evaluation gate
+              and a full audit trail.
             </p>
             <div class="chips-group">
               <div class="chips-label">Fireblocks API</div>
@@ -83,7 +83,7 @@
               </div>
             </div>
             <p class="tech-line"><b>Stack:</b> Next.js 16 · React 19 · Supabase (Auth + Postgres) · Zustand · Tailwind · AI SDK</p>
-            <a class="tile-cta" href="https://institutional-workflow-blueprints.vercel.app/" target="_blank" rel="noreferrer">Open app <span class="arrow">→</span></a>
+            <a class="tile-cta" href="https://institutional-workflow-blueprints.vercel.app/" target="_blank" rel="noreferrer">Open app <span class="arrow">&rarr;</span></a>
           </div>
         </article>
 
@@ -91,7 +91,7 @@
         <article class="tile">
           <a class="tile-shot" href="https://fireblocks-ops-console.vercel.app/" target="_blank" rel="noreferrer">
             <span class="num">02</span>
-            <span class="badge gated"><span class="bdot"></span> Access-gated</span>
+            <span class="badge"><span class="bdot"></span> Live</span>
             <img src="shots/ops-console.png" alt="Custody Ops Console home screen with live vault accounts" />
           </a>
           <div class="tile-body">
@@ -102,9 +102,9 @@
             <p class="tagline">Live custody operations wired straight to the Fireblocks core API.</p>
             <p class="overview">
               Browse every vault account and multi-asset balance, route governed transfers
-              vault-to-vault or vault-to-external-address, and watch the transaction lifecycle
+              vault to vault or vault to external address, and watch the transaction lifecycle
               auto-poll through policy holds to completion. The app only submits; Fireblocks governs.
-              API credentials live server-side only, behind an HTTP Basic access gate.
+              API credentials live server-side only, behind a lightweight access gate.
             </p>
             <div class="chips-group">
               <div class="chips-label">Fireblocks API</div>
@@ -125,8 +125,11 @@
                 <span class="chip prim">Multi-chain</span>
               </div>
             </div>
+            <div class="creds">
+              <span class="lbl">Login</span> user <code>fireblocks</code> · pass <code>innovate</code>
+            </div>
             <p class="tech-line"><b>Stack:</b> Next.js 14 · server-only API routes · HTTP Basic access gate</p>
-            <a class="tile-cta gated" href="https://fireblocks-ops-console.vercel.app/" target="_blank" rel="noreferrer">Open app (login required) <span class="arrow">→</span></a>
+            <a class="tile-cta" href="https://fireblocks-ops-console.vercel.app/" target="_blank" rel="noreferrer">Open app <span class="arrow">&rarr;</span></a>
           </div>
         </article>
 
@@ -142,7 +145,7 @@
               <h3>Trusted AI Command Center</h3>
               <span class="alias">trusted-ai-command-center</span>
             </div>
-            <p class="tagline">Evidence-backed operational intelligence on top of Fireblocks — read-only and governed.</p>
+            <p class="tagline">Evidence-backed operational intelligence on top of Fireblocks, read-only and governed.</p>
             <p class="overview">
               Run evidence-backed investigations across settlements, approvals, liquidity, and policy
               enforcement using live Fireblocks data. Includes an Evidence Library, an audit trail
@@ -168,7 +171,7 @@
               </div>
             </div>
             <p class="tech-line"><b>Stack:</b> Turborepo (web · api · mcp-server · worker) · Vite · pnpm · policy-engine + fireblocks-client packages</p>
-            <a class="tile-cta" href="https://fireblocks-trusted-ai-command-cente.vercel.app/" target="_blank" rel="noreferrer">Open app <span class="arrow">→</span></a>
+            <a class="tile-cta" href="https://fireblocks-trusted-ai-command-cente.vercel.app/" target="_blank" rel="noreferrer">Open app <span class="arrow">&rarr;</span></a>
           </div>
         </article>
 
@@ -181,14 +184,14 @@
           </a>
           <div class="tile-body">
             <div class="tile-title">
-              <h3>Meridian — Embedded Wallet</h3>
+              <h3>Meridian, Embedded Wallet</h3>
               <span class="alias">embedded-wallet</span>
             </div>
             <p class="tagline">A consumer non-custodial wallet with no seed phrase and no extension.</p>
             <p class="overview">
               Sign in with email and an MPC embedded wallet is provisioned in the background via
               Dynamic (a Fireblocks company). Users self-custody their keys, then send, receive, and
-              hold POL and stablecoins on Polygon Amoy. The application never sees a private key — the
+              hold POL and stablecoins on Polygon Amoy. The application never sees a private key; the
               key is sharded across MPC parties.
             </p>
             <div class="chips-group">
@@ -209,7 +212,7 @@
               </div>
             </div>
             <p class="tech-line"><b>Stack:</b> Next.js · viem · qrcode.react · Dynamic embedded MPC wallets</p>
-            <a class="tile-cta" href="https://fireblocks-embedded-wallet.vercel.app/" target="_blank" rel="noreferrer">Open app <span class="arrow">→</span></a>
+            <a class="tile-cta" href="https://fireblocks-embedded-wallet.vercel.app/" target="_blank" rel="noreferrer">Open app <span class="arrow">&rarr;</span></a>
           </div>
         </article>
 
@@ -225,7 +228,7 @@
               <h3>Fireblocks Wallet</h3>
               <span class="alias">role-based custody demo</span>
             </div>
-            <p class="tagline">Segregation of duties across a wallet — Viewer, Initiator, Approver, Admin.</p>
+            <p class="tagline">Segregation of duties across a wallet: Viewer, Initiator, Approver, Admin.</p>
             <p class="overview">
               The browser talks only to a backend that brokers Fireblocks; the API key never reaches
               the client. Roles enforce who can view, initiate, and approve, and high-value transfers
@@ -251,10 +254,82 @@
               </div>
             </div>
             <p class="tech-line"><b>Stack:</b> Vite + React web · Express backend · zod · mobile companion</p>
-            <a class="tile-cta" href="https://fireblocks-wallet.vercel.app/" target="_blank" rel="noreferrer">Open app <span class="arrow">→</span></a>
+            <a class="tile-cta" href="https://fireblocks-wallet.vercel.app/" target="_blank" rel="noreferrer">Open app <span class="arrow">&rarr;</span></a>
           </div>
         </article>
 
+      </div>
+    </section>
+
+    <!-- DEVELOPER TOOLING -->
+    <section>
+      <div class="sec-head">
+        <div class="eyebrow">How AI meets custody</div>
+        <h2>Fireblocks developer tooling: SDK, CLI &amp; MCP</h2>
+        <p>Fireblocks exposes three layers to builders. This suite leans on all three: the official SDK as the backbone, CLI-style scripts to run the sandbox, and a custom MCP server that lets AI agents operate on custody safely.</p>
+      </div>
+
+      <div class="stack">
+        <div class="stack-card">
+          <h4><span class="ic"></span> SDK</h4>
+          <p class="tool-desc">
+            The primary developer interface for building on Fireblocks. Create vault accounts and
+            wallets, transfer assets, approve transactions, and manage policy. Requests authenticate
+            with an API key plus an RSA private key.
+          </p>
+          <div class="chips">
+            <span class="chip">TypeScript</span>
+            <span class="chip">Python</span>
+            <span class="chip">Java</span>
+            <span class="chip">Go</span>
+            <span class="chip">C#</span>
+          </div>
+          <span class="tool-here"><b>In this suite:</b> @fireblocks/ts-sdk (v7, v12, v19) across four of the five apps.</span>
+        </div>
+
+        <div class="stack-card">
+          <h4><span class="ic"></span> CLI</h4>
+          <p class="tool-desc">
+            Command-line tooling to interact with the platform without a full application: test API
+            calls, generate signatures, validate connectivity, and run automation. Many teams build
+            their own CLI wrappers around the SDK.
+          </p>
+          <div class="chips">
+            <span class="chip">auth checks</span>
+            <span class="chip">signatures</span>
+            <span class="chip">connectivity</span>
+            <span class="chip">automation</span>
+          </div>
+          <span class="tool-here"><b>In this suite:</b> custom Node scripts that verify auth and seed the sandbox with vaults and test assets.</span>
+        </div>
+
+        <div class="stack-card">
+          <h4><span class="ic"></span> MCP</h4>
+          <p class="tool-desc">
+            Model Context Protocol lets AI assistants like Cursor, Claude, and ChatGPT securely
+            operate on Fireblocks resources. The assistant talks to an MCP server, and the MCP server
+            uses the Fireblocks SDK underneath.
+          </p>
+          <div class="chips">
+            <span class="chip">Cursor</span>
+            <span class="chip">Claude</span>
+            <span class="chip">ChatGPT</span>
+            <span class="chip">agents</span>
+          </div>
+          <span class="tool-here"><b>In this suite:</b> a custom JSON-RPC MCP server exposing read-only Fireblocks tools (list vaults, get transactions) to agents.</span>
+        </div>
+      </div>
+
+      <div class="tool-flow">
+        <div class="flow-node"><div class="fn-k">AI assistant</div><div class="fn-v">Cursor · Claude · ChatGPT</div></div>
+        <div class="flow-arrow">&darr;</div>
+        <div class="flow-node accent"><div class="fn-k">Fireblocks MCP</div><div class="fn-v">secure tool surface for agents</div></div>
+        <div class="flow-arrow">&darr;</div>
+        <div class="flow-node"><div class="fn-k">Fireblocks SDK</div><div class="fn-v">@fireblocks/ts-sdk</div></div>
+        <div class="flow-arrow">&darr;</div>
+        <div class="flow-node"><div class="fn-k">Fireblocks Platform</div><div class="fn-v">API key + RSA auth</div></div>
+        <div class="flow-arrow">&darr;</div>
+        <div class="flow-node"><div class="fn-k">Vaults · Wallets · Assets</div><div class="fn-v">MPC custody</div></div>
       </div>
     </section>
 
@@ -262,7 +337,7 @@
     <section>
       <div class="sec-head">
         <div class="eyebrow">Under the hood</div>
-        <h2>Fireblocks SDKs, primitives &amp; integrations</h2>
+        <h2>Fireblocks primitives &amp; the web stack</h2>
         <p>Every app shares the same custody foundation. Here is the full surface area exercised across the suite.</p>
       </div>
 
@@ -270,21 +345,21 @@
         <div class="stack-card">
           <h4><span class="ic"></span> Fireblocks core</h4>
           <div class="stack-list">
-            <div class="stack-item"><span class="k">@fireblocks/ts-sdk</span><span class="v">Official TypeScript SDK — versions 7, 12, and 19 across the apps.</span></div>
+            <div class="stack-item"><span class="k">@fireblocks/ts-sdk</span><span class="v">Official TypeScript SDK, versions 7, 12, and 19 across the apps.</span></div>
             <div class="stack-item"><span class="k">Vaults &amp; Transactions APIs</span><span class="v">Vault accounts, multi-asset balances, createTransaction, status, supported assets.</span></div>
-            <div class="stack-item"><span class="k">Transaction Authorization Policy</span><span class="v">TAP — the rule engine that governs funds leaving custody at the MPC layer.</span></div>
+            <div class="stack-item"><span class="k">Transaction Authorization Policy</span><span class="v">TAP, the rule engine that governs funds leaving custody at the MPC layer.</span></div>
             <div class="stack-item"><span class="k">MPC-CMP custody</span><span class="v">Keys sharded across parties; no single private key ever exists.</span></div>
             <div class="stack-item"><span class="k">Webhooks</span><span class="v">Transaction lifecycle events drive audit and UI state.</span></div>
           </div>
         </div>
 
         <div class="stack-card">
-          <h4><span class="ic"></span> Embedded &amp; AI</h4>
+          <h4><span class="ic"></span> Embedded &amp; on-chain</h4>
           <div class="stack-list">
-            <div class="stack-item"><span class="k">Dynamic (@dynamic-labs)</span><span class="v">MPC embedded wallets — a Fireblocks company — for email-login self-custody.</span></div>
-            <div class="stack-item"><span class="k">Model Context Protocol</span><span class="v">A JSON-RPC MCP server exposing read-only Fireblocks tools to AI agents.</span></div>
+            <div class="stack-item"><span class="k">Dynamic (@dynamic-labs)</span><span class="v">MPC embedded wallets (a Fireblocks company) for email-login self-custody.</span></div>
             <div class="stack-item"><span class="k">Governed AI reasoning</span><span class="v">AI investigates and summarizes; execution and signing stay disabled.</span></div>
             <div class="stack-item"><span class="k">viem</span><span class="v">On-chain reads and EOA signing on EVM testnets.</span></div>
+            <div class="stack-item"><span class="k">Key sharding</span><span class="v">No single private key ever exists to be stolen or leaked.</span></div>
           </div>
         </div>
 
@@ -292,25 +367,83 @@
           <h4><span class="ic"></span> Environment &amp; platform</h4>
           <div class="stack-list">
             <div class="stack-item"><span class="k">Fireblocks Sandbox</span><span class="v">A single test workspace shared across all five apps.</span></div>
-            <div class="stack-item"><span class="k">Testnets</span><span class="v">Polygon Amoy and Ethereum Sepolia — real on-chain, no real-world value.</span></div>
+            <div class="stack-item"><span class="k">Testnets</span><span class="v">Polygon Amoy and Ethereum Sepolia, real on-chain with no real-world value.</span></div>
             <div class="stack-item"><span class="k">API-key + RSA auth</span><span class="v">Server-only credentials; the browser never holds secrets.</span></div>
             <div class="stack-item"><span class="k">Web stack</span><span class="v">Next.js, React, Vite, Turborepo, Tailwind, Supabase, Express, TypeScript.</span></div>
             <div class="stack-item"><span class="k">Delivery</span><span class="v">Vercel hosting with CI from GitHub.</span></div>
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- SANDBOX CONSTRAINTS -->
+    <section>
+      <div class="sec-head">
+        <div class="eyebrow">Constraints &amp; honesty</div>
+        <h2>Engineering within the Fireblocks sandbox</h2>
+        <p>Everything here runs against one shared sandbox workspace on public testnets. That keeps it real and safe, but the sandbox has genuine constraints. Here is how they were navigated.</p>
+      </div>
+
+      <div class="limits">
+        <div class="limit">
+          <span class="n">01</span>
+          <div>
+            <div class="lt">Testnet assets, acquired by hand</div>
+            <div class="lb">Every balance is testnet value with no real-world worth. Funding vaults meant generating Fireblocks deposit addresses, pulling from public faucets (Polygon Amoy POL, Ethereum Sepolia ETH), and minting sandbox test tokens. A slow, rate-limited loop, automated with seed scripts.</div>
+          </div>
+        </div>
+        <div class="limit">
+          <span class="n">02</span>
+          <div>
+            <div class="lt">Five API users, allocated carefully</div>
+            <div class="lb">The sandbox caps API users at five. With five apps sharing one workspace, API users were inventoried and assigned deliberately, retiring unused ones to make room.</div>
+          </div>
+        </div>
+        <div class="limit">
+          <span class="n">03</span>
+          <div>
+            <div class="lt">No custom TAP authoring</div>
+            <div class="lb">The sandbox does not permit authoring restrictive Transaction Authorization Policy rules. Where a demo needs a hard approval gate, it is enforced at the application layer and labeled as such; the live TAP is surfaced read-only.</div>
+          </div>
+        </div>
+        <div class="limit">
+          <span class="n">04</span>
+          <div>
+            <div class="lt">Mobile co-signer enrollment</div>
+            <div class="lb">Publishing policy changes and approving held transactions expects an owner or co-signer enrolled on the Fireblocks mobile app via device QR, which an API-only sandbox cannot fully provide.</div>
+          </div>
+        </div>
+        <div class="limit">
+          <span class="n">05</span>
+          <div>
+            <div class="lt">Faucet and asset coverage</div>
+            <div class="lb">Testnet faucet liquidity and supported-asset coverage are limited, so scenarios were built around assets the sandbox actually supports (for example, Sepolia ETH standing in for a production Polygon leg).</div>
+          </div>
+        </div>
+        <div class="limit">
+          <span class="n">06</span>
+          <div>
+            <div class="lt">Rate limits and latency</div>
+            <div class="lb">Sandbox API rate limits and variable latency shaped polling intervals, webhook handling, and how aggressively each app refreshes live data.</div>
+          </div>
+        </div>
+      </div>
+
+      <a class="sandbox-link" href="https://sandbox.fireblocks.io/v2" target="_blank" rel="noreferrer">
+        Fireblocks Sandbox · <code>sandbox.fireblocks.io/v2</code> <span class="arrow">&rarr;</span>
+      </a>
 
       <div class="note">
         <b>What is real vs. modeled.</b> All custody, signing, and transaction execution are genuinely
         performed by Fireblocks against a live sandbox workspace on public testnets. Where the sandbox
-        couldn't author custom Transaction Authorization Policy rules, the approval gate is enforced at
-        the application layer and labeled as such in-app. Balances and transactions carry no real-world
-        value.
+        could not author custom Transaction Authorization Policy rules, the approval gate is enforced
+        at the application layer and labeled as such in-app. Balances and transactions carry no
+        real-world value.
       </div>
     </section>
 
     <footer>
-      Built on <span class="orange">Fireblocks</span> infrastructure · Sandbox &amp; testnets · Five apps, one custody backbone
+      Built on <span class="orange">Fireblocks</span> infrastructure · Sandbox &amp; testnets · Five live apps, one custody backbone
     </footer>
   </main>
 </body>
