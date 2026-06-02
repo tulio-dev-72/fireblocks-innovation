@@ -23,6 +23,7 @@
       </a>
       <nav class="nav-links">
         <button type="button" class="nav-about" data-about-open>About me</button>
+        <button type="button" class="nav-about" data-changelog-open>Changelog</button>
         <a href="#apps">Applications</a>
         <a href="#tooling">Developer tooling</a>
         <a href="#primitives">Primitives</a>
@@ -501,16 +502,70 @@
     </div>
   </div>
 
+  <!-- CHANGELOG MODAL -->
+  <div class="modal-overlay" id="changelogModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="changelogTitle">
+      <button type="button" class="modal-close" data-changelog-close aria-label="Close">&times;</button>
+      <div class="modal-label" id="changelogTitle">Changelog</div>
+      <p class="modal-body">
+        How the suite has tracked the Fireblocks platform. Each entry is a deliberate alignment with
+        where Fireblocks is heading, applied across the apps and reflected on this page.
+      </p>
+      <ul class="changelog">
+        <li class="cl-item">
+          <span class="cl-tag">SDK</span>
+          <div class="cl-text"><b>Unified on <code>@fireblocks/ts-sdk</code> v20</b> across the apps that call the core API, retiring mixed major versions so every integration speaks the same SDK.</div>
+        </li>
+        <li class="cl-item">
+          <span class="cl-tag">Webhooks</span>
+          <div class="cl-text"><b>Migrated v1 &rarr; v2.</b> Receivers validate the <code>Fireblocks-Webhook-Signature</code> detached JWS against the environment JWKS, with the legacy RSA-SHA512 signature kept as a fallback.</div>
+        </li>
+        <li class="cl-item">
+          <span class="cl-tag">CLI</span>
+          <div class="cl-text"><b>Adopted the official <code>@fireblocks/fireblocks-cli</code></b> in the command center via a thin env wrapper (auth checks + reads), replacing hand-rolled auth scripts.</div>
+        </li>
+        <li class="cl-item">
+          <span class="cl-tag">MCP</span>
+          <div class="cl-text"><b>Adopted the official Fireblocks MCPs</b> &mdash; AI Link (Local) for live workspace data and the Documentation MCP for docs &mdash; keeping a thin app-integrated server only for audit-logged, demo-mode-aware reads.</div>
+        </li>
+        <li class="cl-item">
+          <span class="cl-tag">Security</span>
+          <div class="cl-text"><b>Secrets &amp; auth hygiene.</b> Unified PEM normalization, canonical credential env names with back-compat, hardened <code>.gitignore</code>s, and gated the command center's auth-diagnostics endpoint behind the app bearer.</div>
+        </li>
+        <li class="cl-item">
+          <span class="cl-tag">Ops console</span>
+          <div class="cl-text"><b>Status is now webhook-driven.</b> A verified Webhooks v2 delivery flips a live indicator and pushes an immediate balance/transaction refresh, rather than polling alone.</div>
+        </li>
+        <li class="cl-item">
+          <span class="cl-tag">Governance</span>
+          <div class="cl-text"><b>TAP surfaced honestly.</b> The Transaction Authorization Policy panel is labeled a read-only mirror, since the integration's Editor key can't fetch or author the policy &mdash; enforcement stays real at the MPC layer.</div>
+        </li>
+        <li class="cl-item">
+          <span class="cl-tag">Embedded wallet</span>
+          <div class="cl-text"><b>Positioned vs. the official reference.</b> Documented as the non-custodial counterpart to Fireblocks' <a href="https://github.com/fireblocks/retail-demo" target="_blank" rel="noreferrer">retail-demo</a> custodial omnibus pattern, with verified testnet config.</div>
+        </li>
+        <li class="cl-item">
+          <span class="cl-tag">Observability</span>
+          <div class="cl-text"><b>Vercel Web Analytics + Speed Insights</b> wired across all five apps and this showcase.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
   <script>
     (function () {
-      var overlay = document.getElementById("aboutModal");
-      if (!overlay) return;
-      function open() { overlay.hidden = false; document.body.style.overflow = "hidden"; }
-      function close() { overlay.hidden = true; document.body.style.overflow = ""; }
-      document.querySelectorAll("[data-about-open]").forEach(function (b) { b.addEventListener("click", open); });
-      document.querySelectorAll("[data-about-close]").forEach(function (b) { b.addEventListener("click", close); });
-      overlay.addEventListener("click", function (e) { if (e.target === overlay) close(); });
-      document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !overlay.hidden) close(); });
+      function bindModal(overlayId, openAttr, closeAttr) {
+        var overlay = document.getElementById(overlayId);
+        if (!overlay) return;
+        function open() { overlay.hidden = false; document.body.style.overflow = "hidden"; }
+        function close() { overlay.hidden = true; document.body.style.overflow = ""; }
+        document.querySelectorAll("[" + openAttr + "]").forEach(function (b) { b.addEventListener("click", open); });
+        document.querySelectorAll("[" + closeAttr + "]").forEach(function (b) { b.addEventListener("click", close); });
+        overlay.addEventListener("click", function (e) { if (e.target === overlay) close(); });
+        document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !overlay.hidden) close(); });
+      }
+      bindModal("aboutModal", "data-about-open", "data-about-close");
+      bindModal("changelogModal", "data-changelog-open", "data-changelog-close");
     })();
   </script>
 
