@@ -1,0 +1,19 @@
+{
+  "name": "fireblocks-innovation",
+  "version": "1.0.0",
+  "description": "A showcase of five live applications built on Fireblocks infrastructure",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static site - no build needed'",
+    "lint": "echo 'No linter configured'"
+  },
+  "keywords": [
+    "fireblocks",
+    "custody",
+    "analytics"
+  ],
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  }
+}
