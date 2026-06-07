@@ -15,13 +15,13 @@
   <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </head>
 <body id="top">
-  <header class="nav">
+  <header class="nav" id="siteNav">
     <div class="nav-inner wrap">
       <a class="nav-brand" href="#top">
         <img src="favicon.svg" alt="" width="22" height="22" />
         <span>Fireblocks Innovation</span>
       </a>
-      <nav class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <button type="button" class="nav-about" data-about-open>About me</button>
         <button type="button" class="nav-about" data-changelog-open>Changelog</button>
         <a href="#apps">Applications</a>
@@ -29,6 +29,9 @@
         <a href="#primitives">Primitives</a>
         <a href="#sandbox">Sandbox</a>
       </nav>
+      <button type="button" class="nav-toggle" data-nav-toggle aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
   <div class="hero-bg" aria-hidden="true"><span class="hero-grid"></span></div>
@@ -566,6 +569,25 @@
       }
       bindModal("aboutModal", "data-about-open", "data-about-close");
       bindModal("changelogModal", "data-changelog-open", "data-changelog-close");
+
+      // Mobile nav toggle
+      var nav = document.getElementById("siteNav");
+      var toggle = nav && nav.querySelector("[data-nav-toggle]");
+      var links = document.getElementById("navLinks");
+      if (nav && toggle && links) {
+        function setOpen(open) {
+          nav.classList.toggle("open", open);
+          toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        }
+        toggle.addEventListener("click", function () { setOpen(!nav.classList.contains("open")); });
+        links.querySelectorAll("a, .nav-about").forEach(function (el) {
+          el.addEventListener("click", function () { setOpen(false); });
+        });
+        document.addEventListener("click", function (e) {
+          if (nav.classList.contains("open") && !nav.contains(e.target)) setOpen(false);
+        });
+        document.addEventListener("keydown", function (e) { if (e.key === "Escape") setOpen(false); });
+      }
     })();
   </script>
 

@@ -86,9 +86,36 @@ h1, h2, h3 { font-family: var(--display); letter-spacing: -0.4px; }
   padding: 7px 12px; border-radius: 9px; transition: color 0.15s, background 0.15s;
 }
 .nav-links a:hover { color: var(--ink); background: var(--overlay); }
+
+/* Hamburger toggle — hidden on desktop, shown on mobile. */
+.nav-toggle {
+  display: none;
+  flex-direction: column; justify-content: center; gap: 4px;
+  width: 40px; height: 36px; padding: 8px 9px;
+  background: transparent; border: 1px solid var(--line); border-radius: 9px; cursor: pointer;
+}
+.nav-toggle span {
+  display: block; height: 2px; width: 100%; background: var(--ink-2); border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.nav.open .nav-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+.nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
 @media (max-width: 640px) {
-  .nav-links { display: none; }
-  .nav-inner { height: 54px; }
+  .nav-inner { height: 54px; position: relative; }
+  .nav-toggle { display: inline-flex; }
+  .nav-links {
+    position: absolute; top: calc(100% + 1px); left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 2px;
+    background: var(--elevated); border: 1px solid var(--line);
+    border-radius: 0 0 14px 14px; box-shadow: var(--shadow-lg);
+    padding: 8px; display: none;
+  }
+  .nav.open .nav-links { display: flex; }
+  .nav-links a, .nav-links .nav-about {
+    width: 100%; text-align: left; padding: 12px 14px; font-size: 15px; border-radius: 9px;
+  }
 }
 
 section[id] { scroll-margin-top: 74px; }
