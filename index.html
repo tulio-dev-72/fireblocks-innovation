@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fireblocks Innovation · Five custody applications</title>
-  <meta name="description" content="A showcase of five sample live applications built on Fireblocks infrastructure: institutional settlement governance, a custody operations console, a trusted AI command center, a consumer embedded wallet, and a role-based custody wallet." />
+  <title>Fireblocks Innovation · Six custody applications</title>
+  <meta name="description" content="A showcase of six sample live applications built on Fireblocks infrastructure: institutional settlement governance, a custody operations console, a trusted AI command center, a consumer embedded wallet, a role-based custody wallet, and a tokenized money market fund with AWS Nitro Enclave signing and a live investor portal." />
   <meta name="theme-color" content="#f4f0e5" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="apple-touch-icon" href="favicon.svg" />
@@ -39,16 +39,17 @@
     <!-- HERO -->
     <section class="hero">
       <span class="kicker"><span class="dot"></span> Fireblocks Innovation</span>
-      <h1>Five sample live apps, one <em>custody</em> backbone.</h1>
+      <h1>Six sample live apps, one <em>custody</em> backbone.</h1>
       <p>
         Each application below is live and wired to a real Fireblocks sandbox workspace, from
         institutional settlement governance to a consumer embedded wallet. Custody, signing, and
         policy stay with Fireblocks; the apps only orchestrate. Open any tile to try it.
       </p>
       <div class="meta">
-        <span><b>5</b> sample live apps</span>
+        <span><b>6</b> sample live apps</span>
         <span>Live <b>Fireblocks sandbox</b></span>
         <span><b>MPC custody</b> + policy controls</span>
+        <span><b>AWS Nitro Enclave</b> co-signer</span>
         <span>Official <b>Fireblocks SDK</b></span>
       </div>
     </section>
@@ -283,6 +284,53 @@
           </div>
         </article>
 
+        <!-- 6 -->
+        <article class="tile">
+          <a class="tile-shot" href="https://mmf-portal.vercel.app/" target="_blank" rel="noreferrer">
+            <span class="num">06</span>
+            <span class="badge"><span class="bdot"></span> Live</span>
+            <img src="shots/mmf-portal.png" alt="Meridian tokenized MMF investor portal showing fund holdings and policy-blocked transfers" />
+          </a>
+          <div class="tile-body">
+            <div class="tile-title">
+              <h3>Meridian, Tokenized MMF</h3>
+              <span class="alias">mmf-portal</span>
+            </div>
+            <p class="tagline">A tokenized money market fund (RWA) with Nitro Enclave signing and a live investor portal.</p>
+            <p class="overview">
+              An end-to-end tokenized Treasury money market fund on Ethereum Sepolia: mGMMF fund
+              shares are issued via Fireblocks Tokenization (ERC-20F) and restricted to whitelisted
+              investor vaults by TAP: three designated-signer allow rules over a default block, so
+              an ineligible transfer ends BLOCKED_BY_POLICY. Signing runs inside an AWS Nitro
+              Enclave co-signer: MPC key shares never leave the attested enclave, and KMS releases
+              them only to a Fireblocks-signed image (PCR8 attestation). The investor portal is a
+              pure projection of the event stream: Webhooks v2 deliveries verified against the
+              Fireblocks JWKS endpoint, with no API secret deployed to Vercel.
+            </p>
+            <div class="chips-group">
+              <div class="chips-label">Fireblocks API</div>
+              <div class="chips">
+                <span class="chip api">@fireblocks/ts-sdk v20</span>
+                <span class="chip api">Tokenization (ERC-20F)</span>
+                <span class="chip api">createTransaction</span>
+                <span class="chip api">Webhooks v2 receiver</span>
+              </div>
+            </div>
+            <div class="chips-group">
+              <div class="chips-label">Custody primitives</div>
+              <div class="chips">
+                <span class="chip prim">AWS Nitro Enclave co-signer</span>
+                <span class="chip prim">Tokenized RWA shares</span>
+                <span class="chip prim">TAP eligibility gate</span>
+                <span class="chip prim">Designated signer (least privilege)</span>
+                <span class="chip prim">MPC custody</span>
+              </div>
+            </div>
+            <p class="tech-line"><b>Stack:</b> TypeScript issuance &amp; settlement scripts · static portal · Vercel serverless functions · Upstash Redis</p>
+            <a class="tile-cta" href="https://mmf-portal.vercel.app/" target="_blank" rel="noreferrer">Open app <span class="arrow">&rarr;</span></a>
+          </div>
+        </article>
+
       </div>
     </section>
 
@@ -309,7 +357,7 @@
             <span class="chip">Java (guide)</span>
             <span class="chip">Web3 connectors</span>
           </div>
-          <span class="tool-here"><b>In this suite:</b> @fireblocks/ts-sdk v20, unified across four of the five apps. <a href="https://developers.fireblocks.com/reference/api-overview" target="_blank" rel="noreferrer">API docs &rarr;</a></span>
+          <span class="tool-here"><b>In this suite:</b> @fireblocks/ts-sdk v20, unified across five of the six apps. <a href="https://developers.fireblocks.com/reference/api-overview" target="_blank" rel="noreferrer">API docs &rarr;</a></span>
         </div>
 
         <div class="stack-card">
@@ -375,6 +423,7 @@
             <div class="stack-item"><span class="k">Vaults &amp; Transactions APIs</span><span class="v">Vault accounts, multi-asset balances, createTransaction, status, supported assets.</span></div>
             <div class="stack-item"><span class="k">Transaction Authorization Policy</span><span class="v">TAP, the rule engine that governs funds leaving custody at the MPC layer.</span></div>
             <div class="stack-item"><span class="k">MPC-CMP custody</span><span class="v">Keys sharded across parties; no single private key ever exists.</span></div>
+            <div class="stack-item"><span class="k">AWS Nitro Enclave co-signer</span><span class="v">Transaction signing runs inside an attested Nitro Enclave; KMS releases MPC key shares only to a Fireblocks-signed image (PCR8 attestation).</span></div>
             <div class="stack-item"><span class="k">Webhooks v2</span><span class="v">Transaction lifecycle events drive audit and UI state. Receivers validate the Fireblocks-Webhook-Signature (detached JWS) against the environment JWKS, with the legacy RSA-SHA512 signature as a fallback. <a href="https://developers.fireblocks.com/reference/validating-webhooks" target="_blank" rel="noreferrer">Docs &rarr;</a></span></div>
           </div>
         </div>
@@ -392,7 +441,7 @@
         <div class="stack-card">
           <h4><span class="ic"></span> Environment &amp; platform</h4>
           <div class="stack-list">
-            <div class="stack-item"><span class="k">Fireblocks Sandbox</span><span class="v">A single test workspace shared across all five apps.</span></div>
+            <div class="stack-item"><span class="k">Fireblocks Sandbox</span><span class="v">Two test workspaces: one shared by five apps, plus a dedicated workspace for the tokenized MMF and its AWS Nitro Enclave co-signer.</span></div>
             <div class="stack-item"><span class="k">Testnets</span><span class="v">Polygon Amoy and Ethereum Sepolia, real on-chain with no real-world value.</span></div>
             <div class="stack-item"><span class="k">API-key + RSA auth</span><span class="v">Server-only credentials; the browser never holds secrets.</span></div>
             <div class="stack-item"><span class="k">Web stack</span><span class="v">Next.js, React, Vite, Turborepo, Tailwind, Supabase, Express, TypeScript.</span></div>
@@ -407,7 +456,7 @@
       <div class="sec-head">
         <div class="eyebrow">Constraints &amp; honesty</div>
         <h2>Engineering within the Fireblocks sandbox</h2>
-        <p>Everything here runs against one shared sandbox workspace on public testnets. That keeps it real and safe, but the sandbox has genuine constraints. Here is how they were navigated.</p>
+        <p>The suite runs against two sandbox workspaces on public testnets: five apps share one workspace, and the tokenized MMF runs in its own with an AWS Nitro Enclave co-signer. That keeps it real and safe, but the sandbox has genuine constraints. Here is how they were navigated.</p>
       </div>
 
       <div class="limits">
@@ -422,14 +471,14 @@
           <span class="n">02</span>
           <div>
             <div class="lt">Five API users, allocated carefully</div>
-            <div class="lb">The sandbox caps API users at five. With five apps sharing one workspace, API users were inventoried and assigned deliberately, retiring unused ones to make room.</div>
+            <div class="lb">The sandbox caps API users at five per workspace. With five apps sharing the original workspace, API users were inventoried and assigned deliberately, retiring unused ones to make room. The tokenized MMF runs in its own sandbox workspace with a dedicated Signer API user paired to the Nitro Enclave co-signer, keeping least-privilege intact: the Signer initiates and signs, while policy stays with the Console Owner under admin quorum.</div>
           </div>
         </div>
         <div class="limit">
           <span class="n">03</span>
           <div>
-            <div class="lt">No custom TAP authoring</div>
-            <div class="lb">The sandbox does not permit authoring restrictive Transaction Authorization Policy rules. Where a demo needs a hard approval gate, it is enforced at the application layer and labeled as such; the live TAP is surfaced read-only.</div>
+            <div class="lt">No custom TAP authoring (shared workspace)</div>
+            <div class="lb">The original shared workspace does not permit authoring restrictive Transaction Authorization Policy rules, so where those demos need a hard approval gate it is enforced at the application layer and labeled as such; the live TAP is surfaced read-only. The MMF workspace is the exception: its eligibility rules are real TAP, authored in the Console and published under admin quorum, with a default block enforced by the policy engine.</div>
           </div>
         </div>
         <div class="limit">
@@ -453,6 +502,13 @@
             <div class="lb">Sandbox API rate limits and variable latency shaped polling intervals, webhook handling, and how aggressively each app refreshes live data.</div>
           </div>
         </div>
+        <div class="limit">
+          <span class="n">07</span>
+          <div>
+            <div class="lt">Running an AWS Nitro Enclave co-signer</div>
+            <div class="lb">The MMF workspace signs with a self-hosted API co-signer inside an AWS Nitro Enclave: a Nitro-capable EC2 instance, CSR-based pairing with the workspace, and KMS that releases MPC key shares only to a Fireblocks-signed enclave image (PCR8 attestation). The communal SGX co-signer remains the fallback.</div>
+          </div>
+        </div>
       </div>
 
       <a class="sandbox-link" href="https://sandbox.fireblocks.io/v2" target="_blank" rel="noreferrer">
@@ -471,15 +527,19 @@
 
       <div class="note">
         <b>What is real vs. modeled.</b> All custody, signing, and transaction execution are genuinely
-        performed by Fireblocks against a live sandbox workspace on public testnets. Where the sandbox
-        could not author custom Transaction Authorization Policy rules, the approval gate is enforced
-        at the application layer and labeled as such in-app. Balances and transactions carry no
-        real-world value.
+        performed by Fireblocks against live sandbox workspaces on public testnets. For the tokenized
+        MMF, the governance is real end to end: transaction signing runs inside an attested AWS Nitro
+        Enclave co-signer, MPC key shares never leave the enclave, and the Transaction Authorization
+        Policy is genuinely authored in the Console and published under admin quorum, so an
+        ineligible transfer is refused by the policy engine itself (BLOCKED_BY_POLICY), not by app
+        code. In the original shared workspace, where the sandbox could not author custom TAP rules,
+        the approval gate is enforced at the application layer and labeled as such in-app. Balances
+        and transactions carry no real-world value.
       </div>
     </section>
 
     <footer>
-      Built on <span class="orange">Fireblocks</span> infrastructure · Sandbox &amp; testnets · Five sample live apps, one custody backbone
+      Built on <span class="orange">Fireblocks</span> infrastructure · Sandbox &amp; testnets · Six sample live apps, one custody backbone
     </footer>
   </main>
 
@@ -497,7 +557,7 @@
       </p>
       <p class="modal-body">
         This suite is how I build conviction about a platform: I evaluated Fireblocks the way an
-        institution would, standing up five applications against a live sandbox to pressure-test the
+        institution would, standing up six applications against a live sandbox to pressure-test the
         custody primitives, segregation of duties, and policy controls firsthand. Each one maps to a
         real institutional use case, from settlement governance to a consumer wallet. This page is the
         walkthrough.
@@ -516,6 +576,10 @@
       </p>
       <ul class="changelog">
         <li class="cl-item">
+          <span class="cl-tag">New app</span>
+          <div class="cl-text"><b>Added Meridian, Tokenized MMF</b>: a tokenized money market fund (RWA) on Sepolia with AWS Nitro Enclave co-signer signing, TAP eligibility rules over a default block, and an investor portal driven entirely by signature-verified Webhooks v2 events (no Fireblocks API secret deployed). <a href="https://mmf-portal.vercel.app/" target="_blank" rel="noreferrer">mmf-portal.vercel.app</a></div>
+        </li>
+        <li class="cl-item">
           <span class="cl-tag">SDK</span>
           <div class="cl-text"><b>Unified on <code>@fireblocks/ts-sdk</code> v20</b> across the apps that call the core API, retiring mixed major versions so every integration speaks the same SDK.</div>
         </li>
@@ -529,7 +593,7 @@
         </li>
         <li class="cl-item">
           <span class="cl-tag">MCP</span>
-          <div class="cl-text"><b>Adopted the official Fireblocks MCPs</b> &mdash; AI Link (Local) for live workspace data and the Documentation MCP for docs &mdash; keeping a thin app-integrated server only for audit-logged, demo-mode-aware reads.</div>
+          <div class="cl-text"><b>Adopted the official Fireblocks MCPs</b>, AI Link (Local) for live workspace data and the Documentation MCP for docs, keeping a thin app-integrated server only for audit-logged, demo-mode-aware reads.</div>
         </li>
         <li class="cl-item">
           <span class="cl-tag">Security</span>
@@ -541,7 +605,7 @@
         </li>
         <li class="cl-item">
           <span class="cl-tag">Governance</span>
-          <div class="cl-text"><b>TAP surfaced honestly.</b> The Transaction Authorization Policy panel is labeled a read-only mirror, since the integration's Editor key can't fetch or author the policy &mdash; enforcement stays real at the MPC layer.</div>
+          <div class="cl-text"><b>TAP surfaced honestly.</b> The Transaction Authorization Policy panel is labeled a read-only mirror, since the integration's Editor key can't fetch or author the policy; enforcement stays real at the MPC layer.</div>
         </li>
         <li class="cl-item">
           <span class="cl-tag">Embedded wallet</span>
@@ -549,7 +613,7 @@
         </li>
         <li class="cl-item">
           <span class="cl-tag">Observability</span>
-          <div class="cl-text"><b>Vercel Web Analytics + Speed Insights</b> wired across all five apps and this showcase.</div>
+          <div class="cl-text"><b>Vercel Web Analytics + Speed Insights</b> wired across all six apps and this showcase.</div>
         </li>
       </ul>
     </div>
