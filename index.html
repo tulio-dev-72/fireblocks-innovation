@@ -59,15 +59,63 @@
       <div class="sec-head">
         <div class="eyebrow">The applications</div>
         <h2>Built on Fireblocks infrastructure</h2>
-        <p>Ordered from heavy institutional governance to the consumer edge. Each tile lists the Fireblocks API surface and custody primitives it actually exercises.</p>
+        <p>The newest application leads, then the rest run from heavy institutional governance to the consumer edge. Each tile lists the Fireblocks API surface and custody primitives it actually exercises.</p>
       </div>
 
       <div class="tiles">
 
         <!-- 1 -->
         <article class="tile">
-          <a class="tile-shot" href="https://institutional-workflow-blueprints.vercel.app/" target="_blank" rel="noreferrer">
+          <a class="tile-shot" href="https://mmf-portal.vercel.app/" target="_blank" rel="noreferrer">
             <span class="num">01</span>
+            <span class="badge new"><span class="spark">&#10022;</span> New</span>
+            <span class="badge"><span class="bdot"></span> Live</span>
+            <img src="shots/mmf-portal.png" alt="Meridian tokenized MMF investor portal showing fund holdings and policy-blocked transfers" />
+          </a>
+          <div class="tile-body">
+            <div class="tile-title">
+              <h3>Meridian, Tokenized MMF</h3>
+              <span class="alias">mmf-portal</span>
+            </div>
+            <p class="tagline">A tokenized money market fund (RWA) with Nitro Enclave signing and a live investor portal.</p>
+            <p class="overview">
+              An end-to-end tokenized Treasury money market fund on Ethereum Sepolia: mGMMF fund
+              shares are issued via Fireblocks Tokenization (ERC-20F) and restricted to whitelisted
+              investor vaults by TAP: three designated-signer allow rules over a default block, so
+              an ineligible transfer ends BLOCKED_BY_POLICY. Signing runs inside an AWS Nitro
+              Enclave co-signer: MPC key shares never leave the attested enclave, and KMS releases
+              them only to a Fireblocks-signed image (PCR8 attestation). The investor portal is a
+              pure projection of the event stream: Webhooks v2 deliveries verified against the
+              Fireblocks JWKS endpoint, with no API secret deployed to Vercel.
+            </p>
+            <div class="chips-group">
+              <div class="chips-label">Fireblocks API</div>
+              <div class="chips">
+                <span class="chip api">@fireblocks/ts-sdk v20</span>
+                <span class="chip api">Tokenization (ERC-20F)</span>
+                <span class="chip api">createTransaction</span>
+                <span class="chip api">Webhooks v2 receiver</span>
+              </div>
+            </div>
+            <div class="chips-group">
+              <div class="chips-label">Custody primitives</div>
+              <div class="chips">
+                <span class="chip prim">AWS Nitro Enclave co-signer</span>
+                <span class="chip prim">Tokenized RWA shares</span>
+                <span class="chip prim">TAP eligibility gate</span>
+                <span class="chip prim">Designated signer (least privilege)</span>
+                <span class="chip prim">MPC custody</span>
+              </div>
+            </div>
+            <p class="tech-line"><b>Stack:</b> TypeScript issuance &amp; settlement scripts · static portal · Vercel serverless functions · Upstash Redis</p>
+            <a class="tile-cta" href="https://mmf-portal.vercel.app/" target="_blank" rel="noreferrer">Open app <span class="arrow">&rarr;</span></a>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="tile">
+          <a class="tile-shot" href="https://institutional-workflow-blueprints.vercel.app/" target="_blank" rel="noreferrer">
+            <span class="num">02</span>
             <span class="badge"><span class="bdot"></span> Live</span>
             <img src="shots/blueprints.png" alt="Institutional Workflow Blueprints, Treasury Control Center home screen" />
           </a>
@@ -109,10 +157,10 @@
           </div>
         </article>
 
-        <!-- 2 -->
+        <!-- 3 -->
         <article class="tile">
           <a class="tile-shot" href="https://fireblocks-ops-console.vercel.app/" target="_blank" rel="noreferrer">
-            <span class="num">02</span>
+            <span class="num">03</span>
             <span class="badge"><span class="bdot"></span> Live</span>
             <img src="shots/ops-console.png" alt="Custody Ops Console home screen with live vault accounts" />
           </a>
@@ -157,10 +205,10 @@
           </div>
         </article>
 
-        <!-- 3 -->
+        <!-- 4 -->
         <article class="tile">
           <a class="tile-shot" href="https://fireblocks-trusted-ai-command-cente.vercel.app/" target="_blank" rel="noreferrer">
-            <span class="num">03</span>
+            <span class="num">04</span>
             <span class="badge"><span class="bdot"></span> Live</span>
             <img src="shots/ai-center.png" alt="Trusted AI Command Center home screen with investigation prompts" />
           </a>
@@ -199,10 +247,10 @@
           </div>
         </article>
 
-        <!-- 4 -->
+        <!-- 5 -->
         <article class="tile">
           <a class="tile-shot" href="https://fireblocks-embedded-wallet.vercel.app/" target="_blank" rel="noreferrer">
-            <span class="num">04</span>
+            <span class="num">05</span>
             <span class="badge"><span class="bdot"></span> Live</span>
             <img src="shots/meridian.png" alt="Meridian embedded wallet shown inside a phone frame" />
           </a>
@@ -242,10 +290,10 @@
           </div>
         </article>
 
-        <!-- 5 -->
+        <!-- 6 -->
         <article class="tile">
           <a class="tile-shot" href="https://fireblocks-wallet.vercel.app/" target="_blank" rel="noreferrer">
-            <span class="num">05</span>
+            <span class="num">06</span>
             <span class="badge"><span class="bdot"></span> Live</span>
             <img src="shots/fireblocks-wallet.png" alt="Fireblocks Wallet role-based custody demo home screen" />
           </a>
@@ -281,53 +329,6 @@
             </div>
             <p class="tech-line"><b>Stack:</b> Vite + React web · Express backend · zod · mobile companion</p>
             <a class="tile-cta" href="https://fireblocks-wallet.vercel.app/" target="_blank" rel="noreferrer">Open app <span class="arrow">&rarr;</span></a>
-          </div>
-        </article>
-
-        <!-- 6 -->
-        <article class="tile">
-          <a class="tile-shot" href="https://mmf-portal.vercel.app/" target="_blank" rel="noreferrer">
-            <span class="num">06</span>
-            <span class="badge"><span class="bdot"></span> Live</span>
-            <img src="shots/mmf-portal.png" alt="Meridian tokenized MMF investor portal showing fund holdings and policy-blocked transfers" />
-          </a>
-          <div class="tile-body">
-            <div class="tile-title">
-              <h3>Meridian, Tokenized MMF</h3>
-              <span class="alias">mmf-portal</span>
-            </div>
-            <p class="tagline">A tokenized money market fund (RWA) with Nitro Enclave signing and a live investor portal.</p>
-            <p class="overview">
-              An end-to-end tokenized Treasury money market fund on Ethereum Sepolia: mGMMF fund
-              shares are issued via Fireblocks Tokenization (ERC-20F) and restricted to whitelisted
-              investor vaults by TAP: three designated-signer allow rules over a default block, so
-              an ineligible transfer ends BLOCKED_BY_POLICY. Signing runs inside an AWS Nitro
-              Enclave co-signer: MPC key shares never leave the attested enclave, and KMS releases
-              them only to a Fireblocks-signed image (PCR8 attestation). The investor portal is a
-              pure projection of the event stream: Webhooks v2 deliveries verified against the
-              Fireblocks JWKS endpoint, with no API secret deployed to Vercel.
-            </p>
-            <div class="chips-group">
-              <div class="chips-label">Fireblocks API</div>
-              <div class="chips">
-                <span class="chip api">@fireblocks/ts-sdk v20</span>
-                <span class="chip api">Tokenization (ERC-20F)</span>
-                <span class="chip api">createTransaction</span>
-                <span class="chip api">Webhooks v2 receiver</span>
-              </div>
-            </div>
-            <div class="chips-group">
-              <div class="chips-label">Custody primitives</div>
-              <div class="chips">
-                <span class="chip prim">AWS Nitro Enclave co-signer</span>
-                <span class="chip prim">Tokenized RWA shares</span>
-                <span class="chip prim">TAP eligibility gate</span>
-                <span class="chip prim">Designated signer (least privilege)</span>
-                <span class="chip prim">MPC custody</span>
-              </div>
-            </div>
-            <p class="tech-line"><b>Stack:</b> TypeScript issuance &amp; settlement scripts · static portal · Vercel serverless functions · Upstash Redis</p>
-            <a class="tile-cta" href="https://mmf-portal.vercel.app/" target="_blank" rel="noreferrer">Open app <span class="arrow">&rarr;</span></a>
           </div>
         </article>
 
