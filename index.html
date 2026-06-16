@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fireblocks Innovation · Six custody applications</title>
-  <meta name="description" content="A showcase of six sample live applications built on Fireblocks infrastructure: institutional settlement governance, a custody operations console, a trusted AI command center, a consumer embedded wallet, a role-based custody wallet, and a tokenized money market fund with AWS Nitro Enclave signing and a live investor portal." />
+  <title>Fireblocks Innovation · Seven custody applications</title>
+  <meta name="description" content="A showcase of seven sample live applications built on Fireblocks infrastructure: a tokenized-dollar payments console, institutional settlement governance, a custody operations console, a trusted AI command center, a consumer embedded wallet, a role-based custody wallet, and a tokenized money market fund with AWS Nitro Enclave signing and a live investor portal." />
   <meta name="theme-color" content="#f4f0e5" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="apple-touch-icon" href="favicon.svg" />
@@ -39,14 +39,14 @@
     <!-- HERO -->
     <section class="hero">
       <span class="kicker"><span class="dot"></span> Fireblocks Innovation</span>
-      <h1>Six sample live apps, one <em>custody</em> backbone.</h1>
+      <h1>Seven sample live apps, one <em>custody</em> backbone.</h1>
       <p>
         Each application below is live and wired to a real Fireblocks sandbox workspace, from
         institutional settlement governance to a consumer embedded wallet. Custody, signing, and
         policy stay with Fireblocks; the apps only orchestrate. Open any tile to try it.
       </p>
       <div class="meta">
-        <span><b>6</b> sample live apps</span>
+        <span><b>7</b> sample live apps</span>
         <span>Live <b>Fireblocks sandbox</b></span>
         <span><b>MPC custody</b> + policy controls</span>
         <span><b>AWS Nitro Enclave</b> co-signer</span>
@@ -66,8 +66,57 @@
 
         <!-- 1 -->
         <article class="tile">
-          <a class="tile-shot" href="https://mmf-portal.vercel.app/" target="_blank" rel="noreferrer">
+          <a class="tile-shot" href="https://tokenized-dollar-fireblocks.vercel.app/" target="_blank" rel="noreferrer">
             <span class="num">01</span>
+            <span class="badge new"><span class="spark">&#10022;</span> New</span>
+            <span class="badge"><span class="bdot"></span> Live</span>
+            <img src="shots/tokenized-dollar.png" alt="Meridian Tokenized Dollar console showing the Issue, Settle and Cross-border flows with live TAP policy rules" />
+          </a>
+          <div class="tile-body">
+            <div class="tile-title">
+              <h3>Meridian, Tokenized Dollar</h3>
+              <span class="alias">tokenized-dollar</span>
+            </div>
+            <p class="tagline">One tokenized dollar across three jobs: issue it, settle with it, send it across borders.</p>
+            <p class="overview">
+              A tokenized-dollar payments console: five vault-held balances, one per party
+              (bank, corporate, PSP, counterparties), under shared Fireblocks MPC custody, governed by
+              one TAP policy and signed inside an attested AWS Nitro Enclave co-signer. Three lifecycle
+              stages, Issue, Settle, and Cross-border, each run a real ETH_TEST5 transfer on Ethereum
+              Sepolia (standing in for the named tokenized dollar mUSD, deploying separately). The active
+              policy is read live from the Fireblocks Policy API via a non-signing admin key, so every
+              transfer shows exactly what policy did: allow, require approval, or block. Webhooks v2
+              deliveries are verified against the Fireblocks JWKS endpoint.
+            </p>
+            <div class="chips-group">
+              <div class="chips-label">Fireblocks API</div>
+              <div class="chips">
+                <span class="chip api">@fireblocks/ts-sdk v20</span>
+                <span class="chip api">Policy API (live TAP read)</span>
+                <span class="chip api">createTransaction</span>
+                <span class="chip api">getTransaction</span>
+                <span class="chip api">Webhooks v2 receiver</span>
+              </div>
+            </div>
+            <div class="chips-group">
+              <div class="chips-label">Custody primitives</div>
+              <div class="chips">
+                <span class="chip prim">AWS Nitro Enclave co-signer</span>
+                <span class="chip prim">Live TAP policy (allow / approve / block)</span>
+                <span class="chip prim">Designated signer (least privilege)</span>
+                <span class="chip prim">Non-signing admin (read-only policy)</span>
+                <span class="chip prim">MPC custody</span>
+              </div>
+            </div>
+            <p class="tech-line"><b>Stack:</b> Next.js 14 · React 18 · Vercel serverless functions · @fireblocks/ts-sdk v20</p>
+            <a class="tile-cta" href="https://tokenized-dollar-fireblocks.vercel.app/" target="_blank" rel="noreferrer">Open app <span class="arrow">&rarr;</span></a>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="tile">
+          <a class="tile-shot" href="https://mmf-portal.vercel.app/" target="_blank" rel="noreferrer">
+            <span class="num">02</span>
             <span class="badge new"><span class="spark">&#10022;</span> New</span>
             <span class="badge"><span class="bdot"></span> Live</span>
             <img src="shots/mmf-portal.png" alt="Meridian tokenized MMF investor portal showing fund holdings and policy-blocked transfers" />
@@ -112,10 +161,10 @@
           </div>
         </article>
 
-        <!-- 2 -->
+        <!-- 3 -->
         <article class="tile">
           <a class="tile-shot" href="https://institutional-workflow-blueprints.vercel.app/" target="_blank" rel="noreferrer">
-            <span class="num">02</span>
+            <span class="num">03</span>
             <span class="badge"><span class="bdot"></span> Live</span>
             <img src="shots/blueprints.png" alt="Institutional Workflow Blueprints, Treasury Control Center home screen" />
           </a>
@@ -157,10 +206,10 @@
           </div>
         </article>
 
-        <!-- 3 -->
+        <!-- 4 -->
         <article class="tile">
           <a class="tile-shot" href="https://fireblocks-ops-console.vercel.app/" target="_blank" rel="noreferrer">
-            <span class="num">03</span>
+            <span class="num">04</span>
             <span class="badge"><span class="bdot"></span> Live</span>
             <img src="shots/ops-console.png" alt="Custody Ops Console home screen with live vault accounts" />
           </a>
@@ -205,10 +254,10 @@
           </div>
         </article>
 
-        <!-- 4 -->
+        <!-- 5 -->
         <article class="tile">
           <a class="tile-shot" href="https://fireblocks-trusted-ai-command-cente.vercel.app/" target="_blank" rel="noreferrer">
-            <span class="num">04</span>
+            <span class="num">05</span>
             <span class="badge"><span class="bdot"></span> Live</span>
             <img src="shots/ai-center.png" alt="Trusted AI Command Center home screen with investigation prompts" />
           </a>
@@ -247,10 +296,10 @@
           </div>
         </article>
 
-        <!-- 5 -->
+        <!-- 6 -->
         <article class="tile">
           <a class="tile-shot" href="https://fireblocks-embedded-wallet.vercel.app/" target="_blank" rel="noreferrer">
-            <span class="num">05</span>
+            <span class="num">06</span>
             <span class="badge"><span class="bdot"></span> Live</span>
             <img src="shots/meridian.png" alt="Meridian embedded wallet shown inside a phone frame" />
           </a>
@@ -290,10 +339,10 @@
           </div>
         </article>
 
-        <!-- 6 -->
+        <!-- 7 -->
         <article class="tile">
           <a class="tile-shot" href="https://fireblocks-wallet.vercel.app/" target="_blank" rel="noreferrer">
-            <span class="num">06</span>
+            <span class="num">07</span>
             <span class="badge"><span class="bdot"></span> Live</span>
             <img src="shots/fireblocks-wallet.png" alt="Fireblocks Wallet role-based custody demo home screen" />
           </a>
@@ -358,7 +407,7 @@
             <span class="chip">Java (guide)</span>
             <span class="chip">Web3 connectors</span>
           </div>
-          <span class="tool-here"><b>In this suite:</b> @fireblocks/ts-sdk v20, unified across five of the six apps. <a href="https://developers.fireblocks.com/reference/api-overview" target="_blank" rel="noreferrer">API docs &rarr;</a></span>
+          <span class="tool-here"><b>In this suite:</b> @fireblocks/ts-sdk v20, unified across six of the seven apps. <a href="https://developers.fireblocks.com/reference/api-overview" target="_blank" rel="noreferrer">API docs &rarr;</a></span>
         </div>
 
         <div class="stack-card">
@@ -442,7 +491,7 @@
         <div class="stack-card">
           <h4><span class="ic"></span> Environment &amp; platform</h4>
           <div class="stack-list">
-            <div class="stack-item"><span class="k">Fireblocks Sandbox</span><span class="v">Two test workspaces: one shared by five apps, plus a dedicated workspace for the tokenized MMF and its AWS Nitro Enclave co-signer.</span></div>
+            <div class="stack-item"><span class="k">Fireblocks Sandbox</span><span class="v">Three test workspaces: one shared by five apps, a dedicated workspace for the tokenized MMF, and a newer unrestricted workspace for the tokenized dollar. Both tokenized apps sign in an AWS Nitro Enclave co-signer.</span></div>
             <div class="stack-item"><span class="k">Testnets</span><span class="v">Polygon Amoy and Ethereum Sepolia, real on-chain with no real-world value.</span></div>
             <div class="stack-item"><span class="k">API-key + RSA auth</span><span class="v">Server-only credentials; the browser never holds secrets.</span></div>
             <div class="stack-item"><span class="k">Web stack</span><span class="v">Next.js, React, Vite, Turborepo, Tailwind, Supabase, Express, TypeScript.</span></div>
@@ -457,7 +506,7 @@
       <div class="sec-head">
         <div class="eyebrow">Constraints &amp; honesty</div>
         <h2>Engineering within the Fireblocks sandbox</h2>
-        <p>The suite runs against two sandbox workspaces on public testnets: five apps share one workspace, and the tokenized MMF runs in its own with an AWS Nitro Enclave co-signer. That keeps it real and safe, but the sandbox has genuine constraints. Here is how they were navigated.</p>
+        <p>The suite runs against three sandbox workspaces on public testnets: five apps share one workspace, the tokenized MMF runs in its own, and the tokenized dollar runs in a newer workspace without the five-API-user cap. Both tokenized apps sign in an AWS Nitro Enclave co-signer. That keeps it real and safe, but the sandbox has genuine constraints. Here is how they were navigated.</p>
       </div>
 
       <div class="limits">
@@ -472,7 +521,7 @@
           <span class="n">02</span>
           <div>
             <div class="lt">Five API users, allocated carefully</div>
-            <div class="lb">The sandbox caps API users at five per workspace. With five apps sharing the original workspace, API users were inventoried and assigned deliberately, retiring unused ones to make room. The tokenized MMF runs in its own sandbox workspace with a dedicated Signer API user paired to the Nitro Enclave co-signer, keeping least-privilege intact: the Signer initiates and signs, while policy stays with the Console Owner under admin quorum.</div>
+            <div class="lb">The sandbox caps API users at five per workspace. With five apps sharing the original workspace, API users were inventoried and assigned deliberately, retiring unused ones to make room. The tokenized MMF runs in its own sandbox workspace with a dedicated Signer API user paired to the Nitro Enclave co-signer, keeping least-privilege intact: the Signer initiates and signs, while policy stays with the Console Owner under admin quorum. The tokenized dollar runs in a newer workspace without that five-user cap, which lets it pair a dedicated Signer with a separate non-signing admin key that reads the active TAP live for the policy panel.</div>
           </div>
         </div>
         <div class="limit">
@@ -540,7 +589,7 @@
     </section>
 
     <footer>
-      Built on <span class="orange">Fireblocks</span> infrastructure · Sandbox &amp; testnets · Six sample live apps, one custody backbone
+      Built on <span class="orange">Fireblocks</span> infrastructure · Sandbox &amp; testnets · Seven sample live apps, one custody backbone
     </footer>
   </main>
 
@@ -558,7 +607,7 @@
       </p>
       <p class="modal-body">
         This suite is how I build conviction about a platform: I evaluated Fireblocks the way an
-        institution would, standing up six applications against a live sandbox to pressure-test the
+        institution would, standing up seven applications against a live sandbox to pressure-test the
         custody primitives, segregation of duties, and policy controls firsthand. Each one maps to a
         real institutional use case, from settlement governance to a consumer wallet. This page is the
         walkthrough.
@@ -576,6 +625,10 @@
         where Fireblocks is heading, applied across the apps and reflected on this page.
       </p>
       <ul class="changelog">
+        <li class="cl-item">
+          <span class="cl-tag">New app</span>
+          <div class="cl-text"><b>Added Meridian, Tokenized Dollar</b>: a tokenized-dollar payments console on Sepolia covering issue, settle, and cross-border across five party vaults, with live TAP rules read via a non-signing admin key, an AWS Nitro Enclave co-signer, and signature-verified Webhooks v2. Runs in a newer workspace without the five-API-user cap. <a href="https://tokenized-dollar-fireblocks.vercel.app/" target="_blank" rel="noreferrer">tokenized-dollar-fireblocks.vercel.app</a></div>
+        </li>
         <li class="cl-item">
           <span class="cl-tag">New app</span>
           <div class="cl-text"><b>Added Meridian, Tokenized MMF</b>: a tokenized money market fund (RWA) on Sepolia with AWS Nitro Enclave co-signer signing, TAP eligibility rules over a default block, and an investor portal driven entirely by signature-verified Webhooks v2 events (no Fireblocks API secret deployed). <a href="https://mmf-portal.vercel.app/" target="_blank" rel="noreferrer">mmf-portal.vercel.app</a></div>
@@ -614,7 +667,7 @@
         </li>
         <li class="cl-item">
           <span class="cl-tag">Observability</span>
-          <div class="cl-text"><b>Vercel Web Analytics + Speed Insights</b> wired across all six apps and this showcase.</div>
+          <div class="cl-text"><b>Vercel Web Analytics + Speed Insights</b> wired across all seven apps and this showcase.</div>
         </li>
       </ul>
     </div>
